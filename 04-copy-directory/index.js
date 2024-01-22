@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 fs.mkdir(path.join(__dirname, 'files-copy'), { recursive: true }, (err) => {
-  if (err) console.log(err);
+  if (err) throw err;
 });
 
 const src = path.resolve(__dirname, 'files');
@@ -18,12 +18,12 @@ files.forEach((file) => {
 });
 
 fs.readdir(src, (err, items) => {
-  if (err) console.log(err);
+  if (err) throw err;
   items.forEach((item) => {
     const currentPath = path.resolve(src, item);
     const destPath = path.resolve(dest, item);
     fs.copyFile(currentPath, destPath, (err) => {
-      if (err) console.log(err);
+      if (err) throw err;
     });
   });
 });
