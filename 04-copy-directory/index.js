@@ -10,11 +10,11 @@ const dest = path.resolve(__dirname, 'files-copy');
 
 fs.readdir(dest, (err, files) => {
   if (err) throw err;
-files.forEach((file) => {
-  fs.unlink(path.join(dest, file), (err) => {
+  files.forEach((file) => {
+    fs.unlink(path.join(dest, file), (err) => {
       if (err) throw err;
     });
-})
+  });
 });
 
 fs.readdir(src, (err, items) => {

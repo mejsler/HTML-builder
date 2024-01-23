@@ -46,7 +46,6 @@ const copyRecursive = (src, dest) => {
         } else {
           fs.copyFile(srcPath, destPath, (err) => {
             if (err) throw err;
-            console.log(`Copied file: ${srcPath} to ${destPath}`);
           });
         }
       });
@@ -55,5 +54,3 @@ const copyRecursive = (src, dest) => {
 };
 
 copyRecursive(srcAssets, destAssets);
-
-console.log('06-build-page is not done yet, please give me some time to finish before reviewing 🙌🏻')
